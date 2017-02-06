@@ -1,0 +1,10 @@
+[user]
+	name = Daniil Popov
+	email = daniil.popov.office@gmail.com
+[core]
+	editor = vim
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
