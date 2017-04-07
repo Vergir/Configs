@@ -26,6 +26,7 @@ set smartcase
 nnoremap <leader>f 1z=
 nnoremap <leader>s :set spell!<CR>
 inoremap jk <ESC>
+nnoremap <CR> :noh<CR><CR>
 
 execute pathogen#infect()
 " set spell spellang=en_us
