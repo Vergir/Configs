@@ -9,7 +9,7 @@ test -d "/usr/local/opt/openssl/bin" && export PATH="/usr/local/opt/openssl/bin:
 export HISTCONTROL=ignoredups:erasedups
 export CLICOLOR=1
 export LSCOLORS=gxfxfxfxcxbxbxDxDxExex
-export LS_COLORS='di=31:ln=35:so=35:pi=35:ex=32:bd=31:cd=31:su=1;33:sg=1;33:tw=1;34:ow=34'
+export LS_COLORS='di=36:ln=35:so=35:pi=35:ex=32:bd=31:cd=31:su=1;33:sg=1;33:tw=1;34:ow=34'
 export EDITOR=vim
 
 # PROMPT section

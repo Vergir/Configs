@@ -1,0 +1,21 @@
+!Set appropriate $TERM
+xTerm*termName: xterm-256color
+!Enable UTF-8
+XTerm*locale: true
+!Make ALT behave as input for [ chars instead of æ etc
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+!Font
+XTerm*faceName: Inconsolata LGC
+XTerm*faceSize: 10
+!Make all XTerms apply .profile and stuff
+XTerm*loginShell: true
+!BG/FG
+XTerm*background: black
+XTerm*foreground: white
+!Window size
+XTerm*VT100*geometry: 80x50
+!Change how bolding works
+XTerm*boldMode: false
+XTerm*colorBDMode: true
+XTerm*colorBD: rgb:fc/fc/fc

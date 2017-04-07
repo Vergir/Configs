@@ -34,7 +34,7 @@ set mark-symlinked-directories on
 set visible-stats on
 
 # Adds a character at the begining of the prompt indicating mode (vi-command, vi-insert, emacs)
-set show-mode-in-prompt on
+set show-mode-in-prompt off
 
 # Skips completed Text(e.g. completing after 'e' in 'Makefile' results in 'Makefile' rather than 'Makefilefile')
 set skip-completed-text on
