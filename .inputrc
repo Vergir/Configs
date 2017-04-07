@@ -15,7 +15,7 @@ set keymap vi-insert
 "jk": vi-movement-mode 
 
 # Single <TAB> press will both partially complete the word AND show possible completions
-set show-all-if-ambiguous on
+#set show-all-if-ambiguous on
 
 # Displays common prefix of partial completions in color (depending on file type)
 set colored-completion-prefix on

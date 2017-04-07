@@ -1,40 +1,37 @@
-# System-wide .bashrc file for interactive bash(1) shells.
-if [ -z "$PS1" ]; then
-   return
-fi
+#Exit if non-interactive
+test -z "$PS1" && return
 
-[ -r "/etc/bashrc_$TERM_PROGRAM" ] && . "/etc/bashrc_$TERM_PROGRAM"
-[ -f "/etc/inputrc" ] && bind -f /etc/inputrc
-[ -d "/usr/local/opt/openssl/bin" ] && export PATH="/usr/local/opt/openssl/bin:$PATH"
+test -r "/etc/bashrc_$TERM_PROGRAM" && . "/etc/bashrc_$TERM_PROGRAM"
+test -f "/etc/inputrc" && bind -f /etc/inputrc
+test -d "/usr/local/opt/openssl/bin" && export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # EXPORT section
 export HISTCONTROL=ignoredups:erasedups
 export CLICOLOR=1
-export CLICOLOR_FORCE=1
 export LSCOLORS=gxfxfxfxcxbxbxDxDxExex
-export LS_COLORS='di=36:ln=35:so=35:pi=35:ex=32:bd=31:cd=31:su=1;33:sg=1;33:tw=1;34:ow=34'
+export LS_COLORS='di=31:ln=35:so=35:pi=35:ex=32:bd=31:cd=31:su=1;33:sg=1;33:tw=1;34:ow=34'
 export EDITOR=vim
 
 # PROMPT section
 function prompt_command
 {
-	if [ $? -eq 0 ] ; then STATUS=0 ; else STATUS=1 ; fi
+	STATUS=$?
 }
 function red_colon
 {
-	[ $STATUS -ne 0 ] && printf ":"
+	test $STATUS -ne 0 && printf ":"
 }
 function white_colon
 {
-	[ $STATUS -eq 0 ] && printf ":"
+	test $STATUS -eq 0 && printf ":"
 }
 function rootless_user
 {
-	[ $EUID -ne 0 ] && printf $(whoami)
+	test $EUID -ne 0 && printf $(whoami)
 }
 function root_user
 {
-	[ $EUID -eq 0 ] && printf $(whoami)
+	test $EUID -eq 0 && printf $(whoami)
 }
 COLON="\[\033[1;31m\]\$(red_colon)\[\033[1;30m\]\$(white_colon)"
 USER="\[\033[1;32m\]\$(rootless_user)\[\033[1;31m\]\$(root_user)"
@@ -50,8 +47,9 @@ PS2=""
 
 # SHOPT section
 shopt -s checkwinsize
-[ ${BASH_VERSINFO[0]} -ge 4 ] && shopt -s autocd
+test ${BASH_VERSINFO[0]} -ge 4 && shopt -s autocd
 shopt -s cdspell
+shopt -s dotglob
 
 # FUNCTIONS section
 psgrep()
@@ -61,12 +59,6 @@ psgrep()
 	else
 		echo "!! Need name to grep for"
 	fi
-}
-la()
-{
-	ls -fAFhl | tail -n +4 | grep "^d" | cat
-	ls -fAFhl | grep "^-" | cat
-	ls -AfFhl | grep -E '^d|^-' -v | grep -v "^total" | cat
 }
 random-string()
 {
