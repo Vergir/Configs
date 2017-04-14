@@ -34,7 +34,7 @@ function root_user
 	test $EUID -eq 0 && printf $(whoami)
 }
 COLON="\[\033[1;31m\]\$(red_colon)\[\033[1;30m\]\$(white_colon)"
-USER="\[\033[1;32m\]\$(rootless_user)\[\033[1;31m\]\$(root_user)"
+USER_NAME="\[\033[1;32m\]\$(rootless_user)\[\033[1;31m\]\$(root_user)"
 AT_HOST="\[\033[1;30m\]@\[\033[1;34m\]\h"
 TIME="\[\033[1;33m\]\$(date +%H)\[\033[1;30m\]:\[\033[1;33m\]\$(date +%M)\[\033[1;30m\]:\[\033[1;33m\]\$(date +%S)"
 DIR="\[\033[1;36m\]\W\[\033[1;30m\]/"
@@ -42,7 +42,7 @@ SEMICOLON="\[\033[1;30m\]; \[\033[1;37m\]"
 
 PROMPT_COMMAND=prompt_command
 PS0="\[\033[0m\]"
-PS1="${COLON} ${TIME} ${USER}${AT_HOST} ${DIR} ${SEMICOLON}"
+PS1="${COLON} ${TIME} ${USER_NAME}${AT_HOST} ${DIR} ${SEMICOLON}"
 PS2=""
 
 # SHOPT section
@@ -63,6 +63,15 @@ psgrep()
 random-string()
 {
 	cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
+}
+uzip()
+{
+	for var in "$@"
+	do
+		nozip=$(echo "$var" | sed "s/.zip//g")
+		mkdir "$nozip"
+		unzip "$var" -d "$nozip"
+	done
 }
 
 #ALIASES section

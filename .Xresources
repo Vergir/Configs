@@ -19,6 +19,8 @@ XTerm*VT100*geometry: 80x50
 XTerm*boldMode: false
 XTerm*colorBDMode: true
 XTerm*colorBD: rgb:fc/fc/fc
+!Prevent new output to reset sroll position to bottom
+XTerm*scrollTtyOutput: false
 !Copy/Paste
 XTerm*VT100.Translations: #override \
 	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
