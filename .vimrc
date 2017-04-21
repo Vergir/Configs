@@ -29,4 +29,3 @@ inoremap jk <ESC>
 nnoremap <CR> :noh<CR><CR>
 
 execute pathogen#infect()
-" set spell spellang=en_us

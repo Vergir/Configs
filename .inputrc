@@ -14,9 +14,6 @@ set keymap vi-insert
 "\C-x\C-r": re-read-init-file
 "jk": vi-movement-mode 
 
-# Single <TAB> press will both partially complete the word AND show possible completions
-#set show-all-if-ambiguous on
-
 # Displays common prefix of partial completions in color (depending on file type)
 set colored-completion-prefix on
 
@@ -34,14 +31,8 @@ set mark-symlinked-directories on
 set visible-stats on
 
 # Adds a character at the begining of the prompt indicating mode (vi-command, vi-insert, emacs)
-set show-mode-in-prompt off
+#sadly doesn't work everywhere because it's relatively new feature
+set show-mode-in-prompt on
 
 # Skips completed Text(e.g. completing after 'e' in 'Makefile' results in 'Makefile' rather than 'Makefilefile')
 set skip-completed-text on
-
-# Disable 'more'-like pager when many completions are shown
-set page-completions off
-
-#Set Strings to show current mode
-set vi-cmd-mode-string [CMD]
-set vi-ins-mode-string 
