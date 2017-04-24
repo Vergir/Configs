@@ -31,8 +31,8 @@ set mark-symlinked-directories on
 set visible-stats on
 
 # Adds a character at the begining of the prompt indicating mode (vi-command, vi-insert, emacs)
-#sadly doesn't work everywhere because it's relatively new feature
-set show-mode-in-prompt on
+#sadly doesn't work everywhere because it's relatively new feature, thus it's commented out
+#set show-mode-in-prompt on
 
 # Skips completed Text(e.g. completing after 'e' in 'Makefile' results in 'Makefile' rather than 'Makefilefile')
 set skip-completed-text on
