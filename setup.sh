@@ -53,7 +53,6 @@ else
 fi
  
 echo -n "WE GIT? ... "
-
 if ! [ -z "$(type -t git)" ];
 then
 	echo "YES. APPLYING .gitconfig"
