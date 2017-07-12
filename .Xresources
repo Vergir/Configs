@@ -1,5 +1,5 @@
 !Set appropriate $TERM
-xTerm*termName: xterm-256color
+XTerm*termName: xterm-256color
 !Enable UTF-8
 XTerm*locale: true
 !Make ALT behave as input for [ chars instead of æ etc
@@ -21,7 +21,11 @@ XTerm*colorBDMode: true
 XTerm*colorBD: rgb:fc/fc/fc
 !Prevent new output to reset sroll position to bottom
 XTerm*scrollTtyOutput: false
-!Copy/Paste
-XTerm*VT100.Translations: #override \
-	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-	Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+!Font increase/decrease
+XTerm.VT100.translations: #override \
+Ctrl <Key> minus: smaller-vt-font() \n\
+Ctrl <Key> plus: larger-vt-font() \n\
+Ctrl <Key> KP_Subtract: smaller-vt-font() \n\
+Ctrl <Key> KP_Add: larger-vt-font() \n\
+Ctrl Shift <Key> V: insert-selection(CLIPBOARD) \n\
+Ctrl Shift <Key> C: copy-selection(CLIPBOARD)

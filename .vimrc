@@ -17,6 +17,7 @@ set wildmode=longest:full
 set ruler
 set backspace=indent,eol
 set laststatus=2
+set number
 set relativenumber
 set ignorecase
 set smartcase
