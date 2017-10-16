@@ -5,7 +5,7 @@ CONFIGS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "APPLYING .inputrc ..."
 if [ -f ~/.inputrc ]; 
 then
-	[ -h ~/.inputrc ] || echo "\$include ${CONFIGS_DIR}/.inputrc" >> ~/.inputrc
+	[ -h ~/.inputrc ] || echo "\$include ${CONFIGS_DIR}/.inputrc" > ~/.inputrc
 else
 	ln -sf ${CONFIGS_DIR}/.inputrc ~/.inputrc
 fi
@@ -13,7 +13,7 @@ fi
 echo "APPLYING .bashrc ..."
 if [ -f ~/.bashrc ]; 
 then
-	[ -h ~/.bashrc ] || echo "source ${CONFIGS_DIR}/.bashrc" >> ~/.bashrc
+	[ -h ~/.bashrc ] || echo "source ${CONFIGS_DIR}/.bashrc" > ~/.bashrc
 else
 	ln -sf ${CONFIGS_DIR}/.bashrc ~/.bashrc
 fi
@@ -21,7 +21,7 @@ fi
 echo "APPLYING .vimrc ..."
 if [ -f ~/.vimrc ]; 
 then
-	[ -h ~/.vimrc ] || echo "source ${CONFIGS_DIR}/.vimrc" >> ~/.vimrc
+	[ -h ~/.vimrc ] || echo "source ${CONFIGS_DIR}/.vimrc" > ~/.vimrc
 else
 	ln -sf ${CONFIGS_DIR}/.vimrc ~/.vimrc
 fi
