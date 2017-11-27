@@ -1,6 +1,6 @@
 [user]
 	name = Daniil Popov
-	email = daniil.popov.office@gmail.com
+	email = daniil.popov@corp.vk.com
 [core]
 	editor = vim
 [color]
@@ -8,3 +8,9 @@
 	branch = auto
 	interactive = auto
 	diff = auto
+[alias]
+	bn = "!git rev-parse --abbrev-ref HEAD"
+	cm = checkout master
+	acm = commit -am 
+	hr = reset --hard
+	pub = "!git push -u origin $(git bn)"

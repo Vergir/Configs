@@ -75,6 +75,10 @@ uzip()
 }
 
 #ALIASES section
+if [[ $OSTYPE == darwin* ]]; then
+	alias ls="ls -G"
+elif [[ $OSTYPE == linux* ]]; then
+	alias ls="ls --color=auto"
+fi
+
 alias grep="grep --color=auto"
-alias brew="brew "
-alias ddeps="ls | xargs -t -n 1 brew uses --installed --include-options"
