@@ -12,5 +12,5 @@
 	bn = "!git rev-parse --abbrev-ref HEAD"
 	cm = checkout master
 	acm = commit -am 
-	hr = reset --hard && git clean -f -d
+	hr = "!git reset --hard $1 && git clean -f -d && : "
 	pub = "!git push -u origin $(git bn)"
