@@ -4,6 +4,7 @@ test -z "$PS1" && return
 test -r "/etc/bashrc_$TERM_PROGRAM" && . "/etc/bashrc_$TERM_PROGRAM"
 test -f "/etc/inputrc" && bind -f /etc/inputrc
 test -d "/usr/local/opt/openssl/bin" && export PATH="/usr/local/opt/openssl/bin:$PATH"
+test -d "$HOME/.jenv" && export PATH="$HOME/.jenv/bin:$PATH" && eval "$(jenv init -)" #jenv is java versions handler for macOS
 
 # EXPORT section
 export HISTCONTROL=ignoredups:erasedups
