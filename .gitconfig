@@ -1,6 +1,6 @@
 [user]
 	name = Daniil Popov
-	email = daniil.popov@corp.vk.com
+	email = daniil.popov.office@gmail.com
 [core]
 	editor = vim
 [color]
@@ -8,6 +8,12 @@
 	branch = auto
 	interactive = auto
 	diff = auto
+[credential]
+	helper = osxkeychain
+[branch "master"]
+    mergeoptions = --no-ff
+[pull]
+	rebase = true
 [alias]
 	bn = "!git rev-parse --abbrev-ref HEAD"
 	cm = checkout master
